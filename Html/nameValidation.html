@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Name validation</title>
+
+    <script>
+    
+    function myFun(){
+
+    var validName = /^[A-Za-z]+$/;
+
+        var a = document.getElementById("name").value;
+    if(a.length == ""){
+        document.getElementById("message").innerHTML = "Please Enter user name";
+        return false;
+    }
+    if(a.length < 3){
+        document.getElementById("message").innerHTML = "Please Enter 3 character";
+        return false;
+    }
+    if(a.length > 20){
+        document.getElementById("message").innerHTML = "Please Enter user name less than 20 character";
+        return false;
+    }
+    if(a.match(validName    ))
+    return true;
+    else{
+        document.getElementById("message").innerHTML = "Please Enter the alphabets only";
+        return false;
+    }
+    }
+    
+    </script>
+
+
+</head>
+<body>
+    <form onsubmit="return myFun()">
+        userName:<br>
+        <input type="text" id="name" value="">
+        <span id="message"></span><br></br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

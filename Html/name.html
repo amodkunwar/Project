@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+    
+            function myFun(){
+    
+               // var compare = /^[A-Za-z+" "]+$/;
+                var compare = /^[A-Za-z" "]$/;
+                var a = document.getElementById("name").value;
+                if(a.length==""){
+                    document.getElementById("message").innerHTML = "Please enter character";
+                    return false;
+                }
+                if(a.length < 3){
+                    document.getElementById("message").innerHTML = "Please enter 3 character";
+                    return false;
+                }
+                if(a.length > 20){
+                    document.getElementById("message").innerHTML = "Please enter 20 character only";
+                    return false;
+                }
+                if(a.match(compare)){
+                    document.getElementById("message").innerHTML = a;
+                    return false;
+                }else{
+                    document.getElementById("message").innerHTML = "Please Enter Alphabets only";
+                    return false;
+                }
+            }
+        </script>
+
+
+</head>
+<body>
+
+    <form onSubmit="return myFun()">
+
+        Name:<br>
+        <input type="text" id="name" value="">
+         <span id="message" style="color:red"></span> <p id="print"></p>
+        <input type="submit" id="submit" value="submit">
+    </form>
+    
+</body>
+</html>
